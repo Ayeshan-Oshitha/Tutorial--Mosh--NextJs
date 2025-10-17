@@ -102,3 +102,17 @@ Basically, there are three places we can get data from:
 As we go down the list, getting data becomes slower.Next.js comes with a **built-in data cache**. Whenever we use the `fetch` function to get data, Next.js will automatically store the results in its **data cache**, which is based on the **file system**. We also have **full control over the cache** — we can delete cached data or limit the cache duration for certain periods.
 
 **Note**: This caching behavior is only implemented for `fetch`. It is not applied to third-party libraries like Axios.
+
+## Static and Dynamic Rendering
+
+In Next.js, we have another performance optimization technique called **Static Rendering** / **Static Site Generation** (SSG).
+
+The idea of **static rendering** is that if we have pages or components with **static data**, Next.js can render them **once** when we build our application for production.
+
+The next time those pages or components are needed, Next.js **does not re-render them**. Instead, it retrieves their **content from the cache**, which is based on the **file system.** This is what we call **static rendering**, meaning the rendering happens at **build time**.
+
+In comparison, **dynamic rendering** happens at **request time**, generating the page or component on the server whenever a user requests it.
+
+Extra - If we use caching, in production the app will behave like a **static site** — it will not re-render. However, if we **disable caching,** Next.js will render the page dynamically at request time.
+
+<img src="./images/image-9.png" width="600">
