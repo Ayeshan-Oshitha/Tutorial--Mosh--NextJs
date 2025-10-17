@@ -35,3 +35,7 @@ A layout component should have a `children` prop of type `ReactNode`.
 ## Navigation
 
 <img src="./images/image-11.png" width="400">
+
+## Programatic Navigation
+
+For programmatic navigation, we use `useRouter` from **next/navigation**. (`useRouter` from **next/router** is used with the Page Router and does not work with the App Router.)

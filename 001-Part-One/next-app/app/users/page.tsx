@@ -1,5 +1,6 @@
 import React from "react";
 import UserTable from "./UserTable";
+import Link from "next/link";
 
 interface UsersPageProps {
   searchParams: {
@@ -13,6 +14,9 @@ const UsersPage = async ({ searchParams }: UsersPageProps) => {
   return (
     <>
       <h1>Users</h1>
+      <Link href="/users/new" className="btn">
+        Create New User
+      </Link>
       <UserTable sortOrder={sortOrder} />
     </>
   );
