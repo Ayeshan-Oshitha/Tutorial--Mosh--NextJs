@@ -64,3 +64,13 @@ If we create an `error.tsx` file at the root level, it **cannot catch errors** t
 The `error.tsx` file should be a **client component**, because it allows users to retry the action. This retry functionality is provided by Next.js, so the client can click a button to attempt the action again. Use this only in necessary parts, otherwise users may trigger it too many times.
 
 **Extra**: We can log the errors when they are caught. One of the most popular services for this is **Sentry**.
+
+# 4. Building APIs
+
+## Getting a Collection of Objects
+
+In a given folder or URL segment, we can have **either a page file or a route file,** but not both. If we need to **display something to the user or return markup**, we should use a **page file**. If we need to handle HTTP requests, we should use a **route** file.
+
+In route files, we can create one or more route handlers. A route handler processes HTTP requests.
+
+**Extra**: When we include the request object in parameter, Next.js will not cache the data. If we remove it, Next.js will cache the data, so the next time it hits the endpoint, it will serve the cached data.
