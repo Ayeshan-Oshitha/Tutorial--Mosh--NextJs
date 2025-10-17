@@ -116,3 +116,9 @@ In comparison, **dynamic rendering** happens at **request time**, generating the
 Extra - If we use caching, in production the app will behave like a **static site** — it will not re-render. However, if we **disable caching,** Next.js will render the page dynamically at request time.
 
 <img src="./images/image-9.png" width="600">
+
+# 2. Styling
+
+## DaisyUI
+
+DaisyUI is a Tailwind CSS plugin. It provides pre-built Tailwind components and themes, so it requires Tailwind CSS.
