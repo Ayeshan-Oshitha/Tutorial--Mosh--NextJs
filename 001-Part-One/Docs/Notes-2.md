@@ -31,3 +31,7 @@ Note - We can access `params` or `searchParams` only inside **page files**. They
 We use layouts to create UI that is shared across multiple pages.
 
 A layout component should have a `children` prop of type `ReactNode`.
+
+## Navigation
+
+<img src="./images/image-11.png" width="400">
