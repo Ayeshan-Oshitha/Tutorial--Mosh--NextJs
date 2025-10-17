@@ -71,8 +71,22 @@ In Next.js, all components in the `app/` folder are server components by default
 
 ### Client-Side vs Server-Side Rendering Example
 
-- In **Server Components**, we can see the HTML document we get from the backend. This is exactly what search engines see when they crawl our website.
+- In **Server Components**, we can see the HTML document we get from the backend (In Network Tab). This is exactly what search engines see when they crawl our website.
 
 - In **Client-Side Rendering**, search engine bots may not see the content immediately because all content is rendered in the browser, which can result in an empty or blank page for SEO purposes.
 
 **Note**: The _Pages Router_ doesn’t support server components — only the App Router supports server components.
+
+## Data Fetching
+
+There are two ways we can fetch data in a Next.js application: we can fetch it on the client or on the server.
+
+<img src="./images/image-7.png" width="600">
+
+Even if we use _React Query_, we still face the same problems with client-side fetching.
+
+However, we can fetch data in our **server components** and get rid of these problems.
+
+In the _Network tab (in preview_), we can see that all our users are already rendered. This is because the rendering is happening on the **server**.
+
+In contrast, in typical React applications — or whenever we use **client-side rendering** — the browser initially receives a blank document. Then it makes a request to the backend to fetch the data and render the content. This means there is always an **extra roundtrip to the backend**, and the application is **not search engine friendly** when fetching on the client.
