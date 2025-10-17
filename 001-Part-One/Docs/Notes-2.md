@@ -54,3 +54,13 @@ If we want to add suspense to every page, we can do it in two ways:
 Using a `not-found.tsx` file, we can create a "Not Found" page for a root layout or inside each folder.
 
 In **Next.js App Router**, the `notFound()` function from `next/navigation` can be used to programmatically trigger the "Not Found" page.
+
+## Handling Unexpected Errors
+
+Using an `error.tsx` file, we can create an error page for the root level or any part of the application (inside any folder).
+
+If we create an `error.tsx` file at the root level, it **cannot catch errors** that occur in layout.tsx in root layout (for example, if there is some logic in layout.tsx). To catch those, we should create a separate file called `global-error.tsx`.
+
+The `error.tsx` file should be a **client component**, because it allows users to retry the action. This retry functionality is provided by Next.js, so the client can click a button to attempt the action again. Use this only in necessary parts, otherwise users may trigger it too many times.
+
+**Extra**: We can log the errors when they are caught. One of the most popular services for this is **Sentry**.
