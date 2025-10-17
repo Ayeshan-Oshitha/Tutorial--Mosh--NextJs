@@ -25,3 +25,9 @@ To make a route publicly accessible, we need to use `a page` file inside that fo
 To access **route parameters**, we use the `params` keyword. To access **query parameters**, we use the `searchParams` keyword. This is the rule in Next.js, and starting from **Next.js 15**, both of these are **asynchronous**.
 
 Note - We can access `params` or `searchParams` only inside **page files**. They cannot be accessed directly inside **components**.
+
+## Layouts
+
+We use layouts to create UI that is shared across multiple pages.
+
+A layout component should have a `children` prop of type `ReactNode`.
