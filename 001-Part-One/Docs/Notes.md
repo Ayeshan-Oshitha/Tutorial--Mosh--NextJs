@@ -90,3 +90,15 @@ However, we can fetch data in our **server components** and get rid of these pro
 In the _Network tab (in preview_), we can see that all our users are already rendered. This is because the rendering is happening on the **server**.
 
 In contrast, in typical React applications — or whenever we use **client-side rendering** — the browser initially receives a blank document. Then it makes a request to the backend to fetch the data and render the content. This means there is always an **extra roundtrip to the backend**, and the application is **not search engine friendly** when fetching on the client.
+
+## Caching
+
+Fetching data in **server components** has an additional benefit: caching. Caching means storing data somewhere that is faster to access.
+
+Basically, there are three places we can get data from:
+
+<img src="./images/image-8.png" width="200">
+
+As we go down the list, getting data becomes slower.Next.js comes with a **built-in data cache**. Whenever we use the `fetch` function to get data, Next.js will automatically store the results in its **data cache**, which is based on the **file system**. We also have **full control over the cache** — we can delete cached data or limit the cache duration for certain periods.
+
+**Note**: This caching behavior is only implemented for `fetch`. It is not applied to third-party libraries like Axios.
