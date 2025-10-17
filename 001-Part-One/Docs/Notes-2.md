@@ -13,3 +13,15 @@ To make a route publicly accessible, we need to use `a page` file inside that fo
 - params in dynamic routes (like `[id]`) is now **asynchronous** in Next.js 15 and later.
 
 - So, instead of accessing params.id synchronously inside your component, you now have to await it — because params is provided as a Promise
+
+## Catch-all Segments
+
+- `[...slug]` - This requires **at least one** segment in the URL. (Example: `/docs/a `or `/docs/a/b`)
+
+- `[[...slug]]` - This makes the catch-all segment **optional**. (Example: `/docs`, `/docs/a`, or `/docs/a/b`)
+
+## Accessing qurt parameters.
+
+To access **route parameters**, we use the `params` keyword. To access **query parameters**, we use the `searchParams` keyword. This is the rule in Next.js, and starting from **Next.js 15**, both of these are **asynchronous**.
+
+Note - We can access `params` or `searchParams` only inside **page files**. They cannot be accessed directly inside **components**.
