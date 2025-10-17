@@ -48,3 +48,9 @@ If we want to add suspense to every page, we can do it in two ways:
 
 1. Go to the root layout and wrap the `children` React node with **Suspense**.
 2. Add a `loading.tsx` file to the root layout.
+
+## Handling Not Found Errors
+
+Using a `not-found.tsx` file, we can create a "Not Found" page for a root layout or inside each folder.
+
+In **Next.js App Router**, the `notFound()` function from `next/navigation` can be used to programmatically trigger the "Not Found" page.
