@@ -37,3 +37,42 @@ However, in the **App Router**, this is **not possible** — only files specific
 ---
 
 For navigation, we use the `Link` component provided by `next/link`. This only re-renders the **relevant part of the page** instead of reloading the entire page. This process is called **client-side navigation**, because unlike a normal `<a>` tag (which reloads the entire page including fonts, icons, and scripts), the `Link` component updates only the necessary parts, making navigation much faster.
+
+## Client and Server Components
+
+In Next.js projects, we have two environments where we can render our components and generate HTML markup: either in the **client** (web browser) or on the **server** (within the Node.js runtime).
+
+<img src="./images/image-4.png" width="600">
+
+Rendering a component in the **client** is similar to how React normally works. We refer to this technique as **Client-Side Rendering (CSR).**
+
+In contrast, we have** Server-Side Rendering (SSR)**, where the components are rendered on the server.
+
+<img src="./images/image-5.png" width="600">
+
+There are benefits to server-side rendering, such as faster initial load and better SEO. However, with server-side rendering, we lose interactivity.
+
+<img src="./images/image-6.png" width="600">
+
+Server components **cannot** listen to browser events like `click`, `change`, `submit`, etc. They also **cannot** access browser APIs like `localStorage` or maintain state using hooks like `useState` or `useEffect`. These functionalities are only available in **Client Components.**
+
+---
+
+### Best Practices
+
+In real-world applications, we often use a **mixture of server and client** components.
+
+- We should default to server components.
+- Use client components only when we absolutely need interactivity or browser-specific features.
+
+In Next.js, all components in the `app/` folder are server components by default.
+
+---
+
+### Client-Side vs Server-Side Rendering Example
+
+- In **Server Components**, we can see the HTML document we get from the backend. This is exactly what search engines see when they crawl our website.
+
+- In **Client-Side Rendering**, search engine bots may not see the content immediately because all content is rendered in the browser, which can result in an empty or blank page for SEO purposes.
+
+**Note**: The _Pages Router_ doesn’t support server components — only the App Router supports server components.
