@@ -22,4 +22,18 @@ With Next.js, we can pre-render certain pages and components that have static da
 
 ## Creating your First NextJs Project
 
-npx create-next-app@latest
+`npx create-next-app@latest`
+
+## Routing and Navigation
+
+Routing in Next.js is based on the file system — meaning it follows convention over configuration.
+
+The difference between the **App Router** and the **Pages Router** is that in the **Pages Router**, if we place any files inside a folder (for example, the `users` folder), those files can be accessed publicly.
+
+For instance: - `localhost:3000/users/test.cs`s would be publicly accessible.
+
+However, in the **App Router**, this is **not possible** — only files specifically meant to be routed (like `page.tsx`) are exposed, making it more secure and organized.
+
+---
+
+For navigation, we use the `Link` component provided by `next/link`. This only re-renders the **relevant part of the page** instead of reloading the entire page. This process is called **client-side navigation**, because unlike a normal `<a>` tag (which reloads the entire page including fonts, icons, and scripts), the `Link` component updates only the necessary parts, making navigation much faster.
