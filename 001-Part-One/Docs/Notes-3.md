@@ -37,3 +37,5 @@ generator client {
 run - `npx prisma generate`
 
 This is the **standard setup**, and it will generate your client automatically into: `node_modules/@prisma/client`
+
+Note: Every time we make changes to the database schema (and run a migration), we should regenerate the Prisma Client using the following command:
