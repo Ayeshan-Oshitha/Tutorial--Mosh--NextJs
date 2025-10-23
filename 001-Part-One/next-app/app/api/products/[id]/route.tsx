@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import schema from "../schema";
 
 interface Props {
-  params: { id: number };
+  params: { id: string };
 }
 
 export async function GET(request: NextRequest, { params }: Props) {
   const { id } = await params;
-  if (id > 10) {
+  if (parseInt(id) > 10) {
     return NextResponse.json({ error: "Product not found" }, { status: 404 });
   }
   return NextResponse.json({ id: id, name: "Rice", price: 25.0 });
@@ -21,7 +21,7 @@ export async function PUT(request: NextRequest, { params }: Props) {
   }
 
   const { id } = await params;
-  if (id > 10) {
+  if (parseInt(id) > 10) {
     return NextResponse.json({ error: "Product not found" }, { status: 404 });
   }
 
@@ -30,7 +30,7 @@ export async function PUT(request: NextRequest, { params }: Props) {
 
 export async function DELETE(request: NextRequest, { params }: Props) {
   const { id } = await params;
-  if (id > 10) {
+  if (parseInt(id) > 10) {
     return NextResponse.json({ error: "Product not found" }, { status: 404 });
   }
   return NextResponse.json(
