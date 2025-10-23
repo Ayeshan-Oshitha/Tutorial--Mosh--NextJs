@@ -15,3 +15,11 @@
 - `npx prisma migrate dev` – for SQL databases
 
 - `npx prisma db push` – for NoSQL databases or when you want to sync the Prisma schema without creating a migration file
+
+## Creating a Prisma Client
+
+To work with the database, we need a **Prisma Client**.
+
+As a best practice, we should ensure that only a **single instance** of the Prisma Client is running in our application. Otherwise, it may throw an error saying _“Too many Prisma Clients”_.
+
+This happens because multiple instances can be created during hot reloading or when the application restarts frequently in development.To prevent this issue, we can reuse an existing Prisma Client instance instead of creating a new one — following the pattern recommended in the official documentation.
