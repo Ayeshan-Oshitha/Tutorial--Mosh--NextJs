@@ -1,4 +1,4 @@
-# 4. Database Integration with Prisma
+# 5. Database Integration with Prisma
 
 ## Setting Up Prisma
 
@@ -39,3 +39,18 @@ run - `npx prisma generate`
 This is the **standard setup**, and it will generate your client automatically into: `node_modules/@prisma/client`
 
 Note: Every time we make changes to the database schema (and run a migration), we should regenerate the Prisma Client using the following command:
+
+# 6. Uploading Files
+
+## Choosing a Platform
+
+- Amazon s3
+- Google Cloud
+- Microsoft Azure
+- Cloudinary
+
+Out of all the above, **Cloudinary** has the best integration with Next.js. Cloudinary provides a number of React components that can be easily integrated into the project.
+
+## Setting Up Cloudinary
+
+`next-cloudinary` package include all the react componenst that we can use in our project
