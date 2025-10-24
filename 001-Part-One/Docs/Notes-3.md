@@ -54,3 +54,8 @@ Out of all the above, **Cloudinary** has the best integration with Next.js. Clou
 ## Setting Up Cloudinary
 
 `next-cloudinary` package include all the react componenst that we can use in our project
+
+## Customizing the Uploading widget
+
+If we need to customize the upload widget, we can use https://demo.cloudinary.com/uw/
+to configure(preview) it and get the code.

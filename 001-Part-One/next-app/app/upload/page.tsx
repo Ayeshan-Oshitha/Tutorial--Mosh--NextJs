@@ -23,6 +23,10 @@ const UploadPage = () => {
       )}
       <CldUploadWidget
         uploadPreset="next_app_rgt"
+        options={{
+          sources: ["local"],
+          multiple: false,
+        }}
         onSuccess={(results) => {
           console.log("Upload successful! Here is the image info: ", results);
           if (results.event !== "success") {
