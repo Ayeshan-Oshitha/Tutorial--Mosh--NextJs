@@ -82,3 +82,9 @@ export const config = {
 ```
 
 To check the login status, Next.js provides built-in NextAuth middleware. If the user is not authenticated, it automatically redirects them to the login page.
+
+## Database Adapters
+
+When we use adapters, NextAuth will automatically store user data in our database when someone logs in.
+
+With a database adapter, NextAuth changes the session management from JWT-based (stored in cookies) to **database-backed sessions**. Without a database adapter, NextAuth manages sessions using JWTs in cookies.
