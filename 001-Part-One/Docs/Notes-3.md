@@ -59,3 +59,26 @@ Out of all the above, **Cloudinary** has the best integration with Next.js. Clou
 
 If we need to customize the upload widget, we can use https://demo.cloudinary.com/uw/
 to configure(preview) it and get the code.
+
+# 6. Authentication with NextAuth
+
+## Protecting Routes
+
+To protect your routes, you should use middleware.
+
+```typescript
+import { NextRequest, NextResponse } from "next/server";
+
+export function middleware(request: NextRequest) {
+  return NextResponse.redirect(new URL("/", request.url));
+}
+
+export const config = {
+  // *: zero or more
+  // +: one or more
+  // ?: zero or one
+  matcher: ["/users/:id*"],
+};
+```
+
+To check the login status, Next.js provides built-in NextAuth middleware. If the user is not authenticated, it automatically redirects them to the login page.
