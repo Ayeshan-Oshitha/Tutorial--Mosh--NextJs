@@ -60,7 +60,7 @@ Out of all the above, **Cloudinary** has the best integration with Next.js. Clou
 If we need to customize the upload widget, we can use https://demo.cloudinary.com/uw/
 to configure(preview) it and get the code.
 
-# 6. Authentication with NextAuth
+# 7. Authentication with NextAuth
 
 ## Protecting Routes
 
@@ -88,3 +88,9 @@ To check the login status, Next.js provides built-in NextAuth middleware. If the
 When we use adapters, NextAuth will automatically store user data in our database when someone logs in.
 
 With a database adapter, NextAuth changes the session management from JWT-based (stored in cookies) to **database-backed sessions**. Without a database adapter, NextAuth manages sessions using JWTs in cookies.
+
+# 8. Sending E-mails
+
+## Setting up React Email
+
+`npm i react-email @react-email/components`
