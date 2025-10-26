@@ -94,3 +94,11 @@ With a database adapter, NextAuth changes the session management from JWT-based 
 ## Setting up React Email
 
 `npm i react-email @react-email/components`
+
+## Previewing Emails
+
+`npm run preview-email` - command used to preview emails (the script is defined in **package.json**).
+
+## Styling Emails
+
+We can style the emails using CSS or Tailwind CSS
