@@ -102,3 +102,17 @@ With a database adapter, NextAuth changes the session management from JWT-based 
 ## Styling Emails
 
 We can style the emails using CSS or Tailwind CSS
+
+# 9. Optimizing Images
+
+In Next.js, we should use the **Next.js** `Image` **component**. Under the hood, it still uses the HTML `<img>` tag, but Next.js automatically **compresses and resizes images** based on the user's device. Therefore, we should prefer using the `Image` component whenever possible.
+
+We should add **public and static assets** to the application in the `public` folder. The `Image` component can automatically convert JPG/PNG images to `WebP` for better performance.
+
+If we want to use **remote images**, we must register the domain inside the Next.js configuration (next.config.js).
+
+For responsiveness, we should provide the `sizes` prop. This helps Next.js decide how to optimize the image for different screen sizes. It _does not affect how the image looks_; it only tells Next.js which versions of the image to serve.
+
+The `Image` component uses **lazy loading by default**, so images are only fetched when they become visible. We can use the `priority` prop to disable lazy loading for important images (such as hero or banner images).
+
+If we use the `fill` layout, the parent element must have _position: relative, fixed, or absolute_.
