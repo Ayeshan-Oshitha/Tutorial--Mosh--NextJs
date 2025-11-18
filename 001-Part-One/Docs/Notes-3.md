@@ -139,3 +139,11 @@ In the root layout file, we can import fonts using `next/font/google`, which inc
 Similarly, we can use **local fonts** as well. First, we must add the font file to our project folder and then import it using the provided structure.
 
 We can also add the imported font to Tailwind using the `variable` keyword, which lets us apply the font anywhere in our application.
+
+## Search Engine Optimization
+
+Whenever we export a `metadata` object from a layout or page file, Next.js automatically includes that metadata inside the `<head>` section of our HTML. Search engines read these meta tags to index our content. To make our pages SEO-friendly, we should ensure that every page has proper metadata.
+
+**opengraph** helps when we share our pages on social media platforms. It allows us to define properties such as title, description, images, and categories that control how the shared link appears.
+
+For some pages that use dynamic routes or query parameters, we need to generate metadata dynamically. To do this, instead of exporting a `metadata` object, we export an `async function generateMetadata(): Promise<Metadata>`
