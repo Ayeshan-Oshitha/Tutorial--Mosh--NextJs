@@ -147,3 +147,15 @@ Whenever we export a `metadata` object from a layout or page file, Next.js autom
 **opengraph** helps when we share our pages on social media platforms. It allows us to define properties such as title, description, images, and categories that control how the shared link appears.
 
 For some pages that use dynamic routes or query parameters, we need to generate metadata dynamically. To do this, instead of exporting a `metadata` object, we export an `async function generateMetadata(): Promise<Metadata>`
+
+## Lazy Loading
+
+Lazy loading is a strategy for loading client components or third-party libraries **only when they are needed**, instead of loading them upfront.
+
+In Next.js, we can use the `dynamic()` function to lazy-load a component. The second argument allows us to provide additional options for the dynamic loading behavior.(By default, we import components as static way)
+
+We can lazy load modules too.
+
+<img src="./images/image-12.png" width="400">
+
+Note: **Client components** (components with "use client") cannot be exported as async functions.
