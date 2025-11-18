@@ -103,7 +103,9 @@ With a database adapter, NextAuth changes the session management from JWT-based 
 
 We can style the emails using CSS or Tailwind CSS
 
-# 9. Optimizing Images
+# 9. Optimization
+
+## Optimizing Images
 
 In Next.js, we should use the **Next.js** `Image` **component**. Under the hood, it still uses the HTML `<img>` tag, but Next.js automatically **compresses and resizes images** based on the user's device. Therefore, we should prefer using the `Image` component whenever possible.
 
@@ -116,3 +118,16 @@ For responsiveness, we should provide the `sizes` prop. This helps Next.js decid
 The `Image` component uses **lazy loading by default**, so images are only fetched when they become visible. We can use the `priority` prop to disable lazy loading for important images (such as hero or banner images).
 
 If we use the `fill` layout, the parent element must have _position: relative, fixed, or absolute_.
+
+## Using Third-party Scripts
+
+As part of integrating our application with third-party services, we often need to add their `scripts` to one or more pages (e.g., Google Analytics).
+
+When adding these scripts in Next.js, we can use the `<Script>` component.
+
+The Script component supports four loading strategies:
+
+- afterInteractive – Loads the script after the page becomes interactive.
+- beforeInteractive – Loads the script before the page becomes interactive (useful for scripts that must run early).
+- lazyOnLoad – Loads the script during the browser’s idle time.
+- worker – Loads the script inside a web worker.
