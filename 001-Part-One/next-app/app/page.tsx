@@ -10,7 +10,9 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col gap-y-3">
-      <h1>Hello {session && <span>{session.user?.name}</span>}</h1>
+      <h1 className="font-poppins">
+        Hello {session && <span>{session.user?.name}</span>}
+      </h1>
       <Link href="/users">Go to Users Page</Link>
       <ProductCard />
 

@@ -131,3 +131,11 @@ The Script component supports four loading strategies:
 - beforeInteractive – Loads the script before the page becomes interactive (useful for scripts that must run early).
 - lazyOnLoad – Loads the script during the browser’s idle time.
 - worker – Loads the script inside a web worker.
+
+## Using Fonts
+
+In the root layout file, we can import fonts using `next/font/google`, which includes hundreds of Google Fonts. This allows us to easily use Google Fonts in our application.
+
+Similarly, we can use **local fonts** as well. First, we must add the font file to our project folder and then import it using the provided structure.
+
+We can also add the imported font to Tailwind using the `variable` keyword, which lets us apply the font anywhere in our application.
