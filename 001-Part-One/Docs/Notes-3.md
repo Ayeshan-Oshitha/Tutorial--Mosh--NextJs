@@ -159,3 +159,7 @@ We can lazy load modules too.
 <img src="./images/image-12.png" width="400">
 
 Note: **Client components** (components with "use client") cannot be exported as async functions.
+
+# 10. Deployment
+
+Before deploying our application, we should build it locally to ensure there are no errors. (`npm run build`)
