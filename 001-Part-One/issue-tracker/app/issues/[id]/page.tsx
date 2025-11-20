@@ -3,6 +3,7 @@ import { prisma } from "@/prisma/client";
 import { Card, Flex, Heading, Text } from "@radix-ui/themes";
 import { notFound } from "next/navigation";
 import ReactMarkDown from "react-markdown";
+import delay from "delay";
 
 interface Props {
   params: {
@@ -18,6 +19,8 @@ const DetailPage = async ({ params }: Props) => {
   if (isNaN(issueId)) {
     notFound();
   }
+
+  await delay(3000); // Simulate network delay for demonstration purposes
 
   const issue = await prisma.issue.findUnique({
     where: { id: issueId },
