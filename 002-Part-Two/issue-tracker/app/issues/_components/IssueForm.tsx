@@ -46,8 +46,8 @@ const IssueForm = ({ issue }: Props) => {
       } else {
         await axios.post("/api/issues", data);
       }
-
       router.push("/issues");
+      router.refresh(); // Stop client-side cache issues
     } catch (error) {
       setIsSubmitting(false);
       setError("An unexpected error occurred. Please try again.");

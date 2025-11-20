@@ -49,4 +49,6 @@ const IssuesPage = async () => {
   );
 };
 
+export const dynamic = "force-dynamic"; //  Ensure the page is always server-side rendered (not cached at build time)
+
 export default IssuesPage;
