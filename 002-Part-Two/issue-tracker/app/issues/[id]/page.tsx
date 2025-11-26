@@ -5,6 +5,8 @@ import delay from "delay";
 import EditIssueButton from "./EditIssueButton";
 import IssueDetails from "./IssueDetails";
 import DeleteIssueButton from "./DeleteIssueButton";
+import { getServerSession } from "next-auth";
+import authOptions from "@/app/api/auth/authOptions";
 
 interface Props {
   params: {
@@ -14,6 +16,8 @@ interface Props {
 
 const DetailPage = async ({ params }: Props) => {
   const { id } = await params;
+
+  const session = await getServerSession(authOptions);
 
   const issueId = parseInt(id);
 
@@ -37,12 +41,14 @@ const DetailPage = async ({ params }: Props) => {
         <Box className="md:col-span-4">
           <IssueDetails issue={issue} />
         </Box>
-        <Box>
-          <Flex direction="column" gap="3">
-            <EditIssueButton issueId={issue.id} />
-            <DeleteIssueButton issueId={issue.id} />
-          </Flex>
-        </Box>
+        {session && (
+          <Box>
+            <Flex direction="column" gap="3">
+              <EditIssueButton issueId={issue.id} />
+              <DeleteIssueButton issueId={issue.id} />
+            </Flex>
+          </Box>
+        )}
       </Grid>
     </>
   );
