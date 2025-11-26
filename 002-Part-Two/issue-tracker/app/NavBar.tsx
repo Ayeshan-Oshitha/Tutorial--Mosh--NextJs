@@ -11,6 +11,7 @@ import {
   Container,
   DropdownMenu,
   Flex,
+  Skeleton,
   Text,
 } from "@radix-ui/themes";
 
@@ -38,7 +39,7 @@ const AuthStatus = () => {
   const { status, data: session } = useSession();
 
   if (status === "loading") {
-    return null;
+    return <Skeleton width="2rem" height="2rem" className="rounded-full" />;
   }
 
   if (status === "unauthenticated") {
